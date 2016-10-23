@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./componentBase.css">
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.8/jquery.fullPage.js"></script>
+<script src="./componentBase.js"></script>
+<script src="./h5.js"></script>
+
+<script type="text/javascript">
+    $(function(){
+        var h5 = new H5();
+
+            h5.addPage('face','首页')
+                            .addComponent('logo',{text:'logo'})
+                            .addComponent('slogan',{text:'slogan'})
+                        .addPage('desc','核心理念页')
+                      //      .addComponent('caption',{text:'核心理念'})
+                        .addPage('page-3','课程分布方向页')
+                     //       .addComponent('caption',{text:'课程方向分布'})
+                        .loader()
+    })
+</script>
+</body>
+</html>
