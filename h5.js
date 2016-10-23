@@ -24,12 +24,12 @@ var H5 = function ( ) {
     this.addComponent = function (name,cfg){
         var cfg = cfg || {};
         cfg = $.extend({
-            type :' base'
+            type : 'base'
         },cfg);
 
         var component;
         var page = this.page.slice(-1)[0]
-        console.log(page)
+
 
         switch (cfg.type){
             case 'base':
@@ -38,6 +38,7 @@ var H5 = function ( ) {
             default:
         }
         page.append(component);
+
         return this
     }
 

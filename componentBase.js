@@ -5,10 +5,11 @@ var H5ComponentBase = function ( name,cfg){
     var cls =' h5_component_name_'+name+ ' h5_component_'+cfg.type;
     var component = $('<div class="h5_component '+cls+' " id="'+id+'">');
 
+    cfg.text && component.text(cfg.text)
     cfg.width && component.width(cfg.width/2);
     cfg.height && component.height(cfg.height/2);
 
-    cfg.bg && component.css( cfg.css )
+    cfg.css && component.css(cfg.css)
 
     cfg.bg && component.css('backgroundImage','url('+cfg.bg+')')
     if( cfg.center){
