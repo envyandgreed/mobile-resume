@@ -24,23 +24,37 @@
             top:50%;
             margin:-270px 0 0 -170px;
         }
-        .h5_component_point .point{
-            display: block;
-            background-color: #ccc;
-            position: absolute;
-            border-radius: 50%;
+        .h5_component_bar .line{
+            height: 15px;
+            font-size: 12px;
+            line-height: 15px;
+            margin-bottom: 15px;
         }
-        .h5_component_point .name{
-            height: 30px;
-            width:100%;
+        .h5_component_bar .name{
+            width:60px;
+            float:left;
+            color:#000;
             text-align: center;
-            position: absolute;
-            top:50%;
-            margin-top: -15px;
-            font-size: 22px;
         }
-        .h5_component_point .per{
-            font-size: .5em;
+        .h5_component_bar .rate{
+            height: 15px;
+            margin-margin-left: 5px;
+            float: left;
+            position: relative;
+        }
+        .h5_component_bar .rate .bg{
+            background-color: #99c0ff;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .h5_component_bar .per{
+            width: 20px;
+            color:#99c0ff;
+            margin-left: 5px;
+            float: left;
         }
     </style>
 </head>
@@ -59,12 +73,12 @@
         width:530,
         height:600,
         data:[
-            ['Javascript' , .4 , '#ff7676'],
-            ['HTML/CSS' , .2 ],
+            ['Javascript', .4, '#ff7676'],
+            ['HTML/CSS', .2 ],
             ['CSS3' , .1],
             ['HTML5' , .2 ],
             ['jQuery' , .35],
-            ['Bootstrap' ,05],
+            ['Bootstrap' ,.05],
             ['AngularJs' , .09],
         ],
         css:{
@@ -73,7 +87,7 @@
         center:true
     }
 
-    var h5 = new H5ComponentBar('myName',cfg)
+    var h5 = new H5ComponentBar('myBarComponent',cfg)
     $('.iphone').append(h5)
 
     var leave = true
