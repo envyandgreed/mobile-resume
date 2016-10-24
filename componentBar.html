@@ -44,17 +44,34 @@
         }
         .h5_component_bar .rate .bg{
             background-color: #99c0ff;
-            width: 100%;
+            width: 0;
             height: 100%;
             position: absolute;
             left: 0;
             top: 0;
+            border-radius: 3px;
         }
         .h5_component_bar .per{
             width: 20px;
             color:#99c0ff;
             margin-left: 5px;
             float: left;
+            -webkit-opacity:0;
+        }
+        .h5_component_bar_load .rate .bg{
+            -webkit-transition: all 1s .5s;
+            width: 100%;
+        }
+
+        .h5_component_bar_leave .rate .bg{
+            width: 0%;
+        }
+        .h5_component_bar_load .per{
+            -webkit-transition: all 1s 1.5s;
+            -webkit-opacity:1;
+        }
+        .h5_component_bar_leave .per{
+            -webkit-opacity:0;
         }
     </style>
 </head>
@@ -82,7 +99,16 @@
             ['AngularJs' , .09],
         ],
         css:{
-            top:200,
+            top:100,
+            opacity:0
+        },
+        animateIn:{
+            opacity:1,
+            top:200
+        },
+        animateOut:{
+            opacity:0,
+            top:100
         },
         center:true
     }
