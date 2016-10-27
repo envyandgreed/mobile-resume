@@ -24,8 +24,29 @@
             top:50%;
             margin:-270px 0 0 -170px;
         }
-        .h5_component_polyline{
-
+        .h5_component_polyline canvas{
+            position: absolute;
+            left:0;
+            top:0;
+            width: 100%;
+            height: 100%;    
+        }
+        .h5_component_polyline .text{
+            position: absolute;
+            font-size: 12px;
+            text-align: center;
+            bottom: -20px;
+            height: 20px;
+            line-height: 20px;
+            -webkit-transform:scale(.8);
+            -webkit-transition:all 1s 1.5s;
+            -webkit-opacity:0;
+        }
+        .h5_component_polyline_load .text{
+            -webkit-opacity:1;
+        }
+        .h5_component_polyline_leave .text{
+            -webkit-opacity:0;
         }
     </style>
 </head>
@@ -42,28 +63,26 @@
     var cfg = {
         type: 'polyline',
         width:530,
-        height:600,
+        height:400,
         data:[
-            ['Javascript', .4, '#ff7676'],
-            ['HTML/CSS', .2 ],
-            ['CSS3' , .1],
-            ['HTML5' , .2 ],
-            ['jQuery' , .35],
-            ['Bootstrap' ,.05],
-            ['AngularJs' , .09],
+            ['JS', 0.4, '#ff7676'],
+            ['NodeJs', 0.1 ],
+            ['CSS3' , 0.2],
+            ['HTML5' , 0.05 ],
+            ['jQuery' , 0.35],
         ],
         css:{
             top:100,
-            opacity:1
+            opacity:0
         },
-        // animateIn:{
-        //     opacity:1,
-        //     top:200
-        // },
-        // animateOut:{
-        //     opacity:0,
-        //     top:100
-        // },
+        animateIn:{
+            opacity:1,
+            top:200
+        },
+        animateOut:{
+            opacity:0,
+            top:100
+        },
         center:true
     }
 
