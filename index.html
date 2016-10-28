@@ -1,35 +1,42 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="./componentBase.css">
-    <link rel="" type="" href="h5.css">
+
+    <!--组件资源-->
+    <link rel="stylesheet" href="componentBase.css">
+    <script src="./lib/jquery.js"></script>
+    <script src="./lib/jquery-ui.min.js"></script> 
+    <script src="./lib/jquery.fullPage.js"></script>
+
+    <script type="text/javascript">
+        var res = [
+            'Base','Bar','Point','Polyline',
+            'Radar','Pie',
+        ]
+        var html = [];
+        for(s in res){
+            html.push('<script src="component'+ res[s]+'.js"><\/script>')       
+        }
+        document.write(html.join(' '))
+    </script>
+
+
+    <script type="text/javascript" src="h5.js"></script>
+    <link rel="stylesheet" href="h5.css">
+
     <style>
         body{
             margin: 0;
             padding: 0;
         }
-
     </style>
-</head>
-<body>
+    <script>
+        $(function(){
 
-<script src="./lib/jquery.js"></script>
-<script src="./lib/jquery-ui.min.js"></script>
-
-<script src="./lib/jquery.fullPage.js"></script>
-<script src="./componentBase.js"></script>
-<script src="./h5.js"></script>
-
-<script type="text/javascript">
-    $(function(){
-        var h5 = new H5();
-
-            h5.addPage('face')
+            var h5 = new H5();
+                        h5.addPage('face')
                             .addComponent('logo',{
                                 text:'logo',
                                 width:400,
@@ -57,7 +64,11 @@
                         .addPage('page-3')
                             .addComponent('caption',{text:'课程方向分布'})
                         .loader()
-    })
-</script>
+
+        })
+    </script>
+</head>
+<body>
+    
 </body>
 </html>
