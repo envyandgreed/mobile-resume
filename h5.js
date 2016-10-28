@@ -18,6 +18,10 @@ var H5 = function ( ) {
         }
         this.el.append(page)
         this.page.push( page )
+        if( typeof this.whenAddPage === 'function'){
+            this.whenAddPage()
+        }
+      
         return this
     }
 
@@ -42,7 +46,7 @@ var H5 = function ( ) {
         return this
     }
 
-    this.loader = function (){
+    this.loader = function ( firstPage ){
         this.el.fullpage({
             onLeave:function(index,nextIndex,direction){
                 $(this).find('.h5_component').trigger('onLeave')
@@ -53,6 +57,9 @@ var H5 = function ( ) {
         });
         this.page[0].find('.h5_component').trigger('onLoad')
         this.el.show()
+        if(firstPage){
+            $.fn.fullpage.moveTo( firstPage )
+        }
     }
     return this
 }
