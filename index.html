@@ -31,38 +31,34 @@
             margin: 0;
             padding: 0;
         }
+        /*.h5_page_face{
+            background-image: url(imgs/face_bg.png)
+        }*/
     </style>
     <script>
         $(function(){
 
             var h5 = new H5();
                         h5.addPage('face')
-                            .addComponent('logo',{
-                                text:'logo',
-                                width:400,
-                                height:100,
-                                css:{backgroundColor:'red',top:200,opacity:0},
+                            .addComponent('topic',{
                                 center:true,
-                                animateIn:{opacity:1},
-                                animateOut:{opacity:0}
-                            })
-                            .addComponent('slogan',{
-                                text:'slogan',
-                                width:400,
-                                height:100,
-                                css:{backgroundColor:'red',top:350},
-                                center:true
-                            })
-                        .addPage('desc')
-                            .addComponent('caption',{
-                                text:'核心理念',
-                                width:400,
-                                height:100,
-                                css:{backgroundColor:'green',top:200},
-                                center:true
-                            })
-                        .addPage('page-3')
-                            .addComponent('caption',{text:'课程方向分布'})
+                                width:395,
+                                height:130,
+                                bg:'imgs/face_logo.png',
+                            //     css:{opacity:0},
+                            //     animateIn:{top:100,opacity:1},
+                            //     animateOut:{top:0,opacity:1}
+                             })
+                            // .addComponent('slogan',{
+                            //     center:true,
+                            //     width:365,
+                            //     height:99,
+                            //     bg:'imgs/face_slogan.png',
+                            //     css:{opacity:0,top:180},
+                            //     animateIn:{left:'50%',opacity:1},
+                            //     animateOut:{left:'0%',opavity:0},
+                            // })
+   
                         .loader()
 
         })
